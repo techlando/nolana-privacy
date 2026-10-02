@@ -91,7 +91,7 @@
   <header>
     <div class="brand">Nolana</div>
     <h1>Privacy Policy</h1>
-    <div class="updated">Last updated: October 2, 2026</div>
+    <div class="updated">Last updated: October 3, 2026</div>
   </header>
 
   <section>
@@ -110,13 +110,18 @@
         <tr><th>Category</th><th>Examples</th><th>Why</th></tr>
         <tr>
           <td>Account information</td>
-          <td>Name, email address, password (encrypted)</td>
+          <td>Name, email address, password (hashed, never stored in plain text)</td>
           <td>Create and secure your account, sign-in</td>
         </tr>
         <tr>
           <td>Content you create</td>
           <td>Journal entries, habit and ritual selections, onboarding answers</td>
           <td>Personalize your ritual and track your progress</td>
+        </tr>
+        <tr>
+          <td>AI coach conversations</td>
+          <td>Messages you send to the in-app AI coach</td>
+          <td>Generate a personalized coaching response (via OpenAI)</td>
         </tr>
         <tr>
           <td>Usage data</td>
@@ -127,11 +132,6 @@
           <td>Device &amp; push token</td>
           <td>Device identifier, push notification token</td>
           <td>Deliver reminders and notifications (via Firebase Cloud Messaging)</td>
-        </tr>
-        <tr>
-          <td>Subscription status</td>
-          <td>Purchase and renewal status</td>
-          <td>Provide access to paid features, through the App Store / Google Play</td>
         </tr>
       </table>
     </div>
@@ -144,7 +144,7 @@
       <li>To sync your habits, journal, and favorites across sessions</li>
       <li>To send reminders and notifications you've opted into</li>
       <li>To understand aggregate usage and improve app features</li>
-      <li>To process and manage your subscription</li>
+      <li>To generate responses from the in-app AI coach</li>
       <li>To respond to support requests</li>
     </ul>
   </section>
@@ -154,9 +154,11 @@
     <p>
       Account and content data is stored on secure, encrypted infrastructure provided
       by our database host (Supabase, running on PostgreSQL). Passwords are stored
-      using industry-standard hashing and are never stored in plain text. We use
-      reasonable administrative and technical safeguards to protect your information,
-      though no method of transmission or storage is 100% secure.
+      using industry-standard hashing and are never stored in plain text. When you
+      message the in-app AI coach, that message is sent to OpenAI solely to generate
+      a response and is not used by us for any other purpose. We use reasonable
+      administrative and technical safeguards to protect your information, though
+      no method of transmission or storage is 100% secure.
     </p>
   </section>
 
@@ -166,7 +168,7 @@
     <ul>
       <li><strong>Firebase (Google)</strong> — app analytics and push notifications</li>
       <li><strong>Supabase</strong> — secure database hosting for your account and app content</li>
-      <li><strong>Apple App Store / Google Play</strong> — subscription purchase processing</li>
+      <li><strong>OpenAI</strong> — processes your messages to the in-app AI coach to generate responses</li>
     </ul>
     <p>
       These providers only receive the data necessary to perform their function and
@@ -179,7 +181,7 @@
     <ul>
       <li>You can edit or delete your journal entries and habit data at any time within the app</li>
       <li>You can disable push notifications in your device settings</li>
-      <li>You can request deletion of your account and associated data by contacting us below</li>
+      <li>You can permanently delete your account and all associated data at any time from <strong>Settings &rarr; Delete Account</strong> within the app. This is irreversible.</li>
     </ul>
   </section>
 
